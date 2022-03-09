@@ -5,12 +5,21 @@ import random
 from words import words
 
 def getWord(wordList):
+    """
+    This function selects and returns a random word from the words.py file
+    """
     wordIndex = random.randint(0, len(wordIndex) - 1)
     return wordList(wordIndex)
 
-print(words)    
 
-# def newGame():
+def newGame():
+    print("HANGMAN") 
+    missedLetters = ''
+    correctLetters = ''
+    unknownWord = getWord(words)
+    gameOver = False
+
+    
 
 #def getRandomWord():
 
@@ -23,6 +32,8 @@ print(words)
 #def playAgain():
 
 #def endGame():
+
+newGame()
 
 
    
