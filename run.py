@@ -72,6 +72,15 @@ def take_user_name_input():
     player_name = input("Enter your name: ")
     print(f"Welcome {player_name}!")
 
+def check_if_all_letters_are_guessed(correct_guesses, word):
+
+    for i in range (len(word)):
+        if word[i] not in correct_guesses:
+            return False
+
+    print("Congratulations! You have guessed the word: " + word)
+    return True
+
 
 def run_game():
     global lives
