@@ -5,36 +5,40 @@ import random
 
 
 
-lives = "hangman"
+lives = 7
 words = ["orangutan", "message", "breakfast"]
 
-def getWord(wordList):
+def get_random_word(wordList):
     """
     This function selects and returns a random word from the words.py file
     """
     word = random.choice(words) #Chooses random word from words array
     return word
 
-def displayGame(missedLetters, correctLetters, unknownWord):
+def display_current_game_status(missed_letters, correct_letters, word):
     """
     This function prints the layout of the playerboard and updates it after every turn
     """
-    playerLives = '_' * len(lives)
-    print(playerLives)
-    
-    print(f"Player: {playerName} from {playerCity}")
+    global lives
+    player_lives = '_' * lives
+    #TODO: instead print the hangman picture here
+    print(player_lives)
+
+
     print()
-    print(f"Letters you have guessed wrong so far: ", ' '.join(missedLetters))
+    print(f"Letters you have guessed wrong so far: ", ' '.join(missed_letters))
     print()
-    blanks = '_' * len(unknownWord) #Finds _ * the length of the unknown word
-    
-    for i in range(len(unknownWord)):
-        if unknownWord[i] in correctLetters:
-            blanks = blanks[:i] + unknownWord[i] + blanks[i+1:]
-    
-    for letter in blanks:
+    placeholder_word = '_' * len(word) #Finds _ * the length of the unknown word
+
+
+    for index in range(len(word)):
+        if word[index] in correct_letters:
+            placeholder_word = placeholder_word[:index] + word[index] + placeholder_word[index+1:]
+
+    for letter in placeholder_word:
         print(letter, end=' ')
     print()
+
 
 def playerGuess(alreadyGuessed):
     """
@@ -53,9 +57,12 @@ def playerGuess(alreadyGuessed):
         else:
             return guess
 
+def progressBoard():
+     
+
 def playAgain():
     """
-    This function asks the player if they want to play again or quit the game
+    This function asks the player if they want to play again or quit the game /// Not working
     """
     play_again = input("Do you want to play again? (yes or no): ")
     if play_again == "yes":
