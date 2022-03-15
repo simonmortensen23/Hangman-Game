@@ -70,6 +70,10 @@ def playAgain():
     else:
         print("Game is over, enjoy your day!")
 
+def take_user_name_input():
+    player_name = input("Enter your name: ")
+    print(f"Welcome {player_name}!")
+
 
 def run_game():
     global lives
