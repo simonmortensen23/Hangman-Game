@@ -104,7 +104,12 @@ def run_game():
 def print_welcome_message():
     print("HANGMAN")
 
+def start_game():
+    print_welcome_message()
+    take_user_name_input()
+    run_game()
 
+start_game()
 
 
 
