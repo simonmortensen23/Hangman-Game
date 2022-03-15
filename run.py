@@ -40,7 +40,7 @@ def display_current_game_status(missed_letters, correct_letters, word):
     print()
 
 
-def playerGuess(alreadyGuessed):
+def take_guess_input(already_guessed):
     """
     Handles the player guess input and checks if it a single letter that has not been used yet
     """
@@ -50,14 +50,12 @@ def playerGuess(alreadyGuessed):
         guess = guess.lower()
         if len(guess) != 1:
             print("Please enter a single letter.")
-        elif guess in alreadyGuessed:
+        elif guess in already_guessed:
             print("You have already guessed that letter. Choose again.")
         elif guess not in "abcdefghijklmnopqrstuvwxyz":
             print("Please enter a LETTER")
         else:
             return guess
-
-def progressBoard():
      
 
 def playAgain():
