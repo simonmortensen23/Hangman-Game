@@ -71,50 +71,36 @@ def playAgain():
         print("Game is over, enjoy your day!")
 
 
-print("HANGMAN") 
-missedLetters = ''
-correctLetters = ''
-unknownWord = getWord(words)
-gameOver = False
-playerName = input("Enter your name: ")
-print()
-playerCity = input("Enter your city: ")
-print()
+def run_game():
+    global lives
+    lives
+    incorrect_guess_letters = ''
+    correct_letters = ''
+    word = get_random_word()
+    is_game_over = False
+
+    print()
 
 
-while True:
-    displayGame(missedLetters, correctLetters, unknownWord)
+    while True:
+        display_current_game_status(incorrect_guess_letters, correct_letters, word)
+        guess = take_guess_input(incorrect_guess_letters + correct_letters)
 
-    guess = playerGuess(missedLetters + correctLetters)
-    
-    
-    if guess in unknownWord:
-        correctLetters = correctLetters + guess
-
-        foundAllLetters = True
-        for i in range (len(unknownWord)):
-            if unknownWord[i] not in correctLetters:
-                foundAllLetters = False
-                break
-        if foundAllLetters:
-            print("Congratiulations! You have guessed the word: " + unknownWord)
-            gameOver = True
-    else:
-        missedLetters = missedLetters + guess
-
-        if len(missedLetters) == len(lives):
-            displayGame(missedLetters, correctLetters, unknownWord)
-            print("You are out of lives!\nAfter " + str(len(missedLetters)) + " missed guesses and " + str(len(correctLetters)) + " correct guesses, the word was '" + unknownWord + "'") 
-            gameOver = True
-
-    if gameOver:
-        if playAgain():
-            missedLetters = ''
-            correctLetters = ''
-            gameOver = False
-            secretWord = getRandomWord(words)
+        if guess in word:
+            correct_letters = correct_letters + guess
+            is_game_over = check_if_all_letters_are_guessed(correct_letters, word)
         else:
-            break
+            lives = lives - 1
+            incorrect_guess_letters = incorrect_guess_letters + guess
+
+            if len(incorrect_guess_letters) == 7:
+                display_current_game_status(incorrect_guess_letters, correct_letters, word)
+                print("You are out of lives!\nAfter " + str(len(incorrect_guess_letters)) + " missed guesses and " + str(len(correct_letters)) + " correct guesses, the word was '" + word + "'")
+                is_game_over = True
+
+        if is_game_over:
+            ask_to_play_again()
+
 
 
 
