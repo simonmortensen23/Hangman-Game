@@ -101,6 +101,8 @@ def run_game():
         if is_game_over:
             ask_to_play_again()
 
+def print_welcome_message():
+    print("HANGMAN")
 
 
 
