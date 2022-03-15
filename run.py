@@ -58,13 +58,13 @@ def take_guess_input(already_guessed):
             return guess
      
 
-def playAgain():
+def ask_to_play_again():
     """
-    This function asks the player if they want to play again or quit the game /// Not working
+    This function asks the player if they want to play again or quit the game
     """
-    play_again = input("Do you want to play again? (yes or no): ")
+    play_again = input("Do you want to play again? (yes or no): ").lower()
     if play_again == "yes":
-        gameOver = False
+        run_game()
     else:
         print("Game is over, enjoy your day!")
 
