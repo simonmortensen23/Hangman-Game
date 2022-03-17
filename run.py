@@ -2,13 +2,10 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
+from words import words
+from hangman_art import *
 
-
-
-lives = 7
-words = ["orangutan", "message", "breakfast"]
-
-def get_random_word(wordList):
+def get_random_word():
     """
     This function selects and returns a random word from the words.py file
     """
@@ -20,9 +17,9 @@ def display_current_game_status(missed_letters, correct_letters, word):
     This function prints the layout of the playerboard and updates it after every turn
     """
     global lives
-    player_lives = '_' * lives
+    player_lives = display_hangman(lives)
     #TODO: instead print the hangman picture here
-    print(player_lives)
+    print(display_hangman(lives))
 
 
     print()
@@ -67,6 +64,7 @@ def ask_to_play_again():
         run_game()
     else:
         print("Game is over, enjoy your day!")
+    
 
 def take_user_name_input():
     player_name = input("Enter your name: ")
@@ -84,7 +82,7 @@ def check_if_all_letters_are_guessed(correct_guesses, word):
 
 def run_game():
     global lives
-    lives
+    lives  = 0
     incorrect_guess_letters = ''
     correct_letters = ''
     word = get_random_word()
@@ -101,7 +99,7 @@ def run_game():
             correct_letters = correct_letters + guess
             is_game_over = check_if_all_letters_are_guessed(correct_letters, word)
         else:
-            lives = lives - 1
+            lives = lives + 1
             incorrect_guess_letters = incorrect_guess_letters + guess
 
             if len(incorrect_guess_letters) == 7:
@@ -113,7 +111,14 @@ def run_game():
             ask_to_play_again()
 
 def print_welcome_message():
-    print("HANGMAN")
+    print("hangman_logo")
+
+def display_hangman(lives):
+    """
+    Display hangman stages from the start of the game
+    and change anytime the player doesn't guess the right letterr
+    """
+    return hangman_pics[lives]
 
 def start_game():
     print_welcome_message()
