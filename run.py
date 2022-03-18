@@ -4,6 +4,7 @@
 import random
 from words import words
 from hangman_art import *
+from pyfiglet import Figlet
 
 def get_random_word():
     """
@@ -21,12 +22,10 @@ def display_current_game_status(missed_letters, correct_letters, word):
     #TODO: instead print the hangman picture here
     print(display_hangman(lives))
 
-
     print()
     print(f"Letters you have guessed wrong so far: ", ' '.join(missed_letters))
     print()
     placeholder_word = '_' * len(word) #Finds _ * the length of the unknown word
-
 
     for index in range(len(word)):
         if word[index] in correct_letters:
@@ -35,7 +34,6 @@ def display_current_game_status(missed_letters, correct_letters, word):
     for letter in placeholder_word:
         print(letter, end=' ')
     print()
-
 
 def take_guess_input(already_guessed):
     """
@@ -54,7 +52,6 @@ def take_guess_input(already_guessed):
         else:
             return guess
      
-
 def ask_to_play_again():
     """
     This function asks the player if they want to play again or quit the game
@@ -63,15 +60,16 @@ def ask_to_play_again():
     if play_again == "yes":
         run_game()
     else:
-        print("Game is over, enjoy your day!")
+        print(f"Game is over {player_name}, enjoy your day!")
     
-
 def take_user_name_input():
+    """
+    This function 
+    """
     player_name = input("Enter your name: ")
     print(f"Welcome {player_name}!")
 
 def check_if_all_letters_are_guessed(correct_guesses, word):
-
     for i in range (len(word)):
         if word[i] not in correct_guesses:
             return False
@@ -79,8 +77,9 @@ def check_if_all_letters_are_guessed(correct_guesses, word):
     print("Congratulations! You have guessed the word: " + word)
     return True
 
-
 def run_game():
+    """
+    """
     global lives
     lives  = 0
     incorrect_guess_letters = ''
@@ -90,28 +89,27 @@ def run_game():
 
     print()
 
-
     while True:
         display_current_game_status(incorrect_guess_letters, correct_letters, word)
         guess = take_guess_input(incorrect_guess_letters + correct_letters)
-
         if guess in word:
             correct_letters = correct_letters + guess
             is_game_over = check_if_all_letters_are_guessed(correct_letters, word)
         else:
             lives = lives + 1
             incorrect_guess_letters = incorrect_guess_letters + guess
-
             if len(incorrect_guess_letters) == 7:
                 display_current_game_status(incorrect_guess_letters, correct_letters, word)
                 print("You are out of lives!\nAfter " + str(len(incorrect_guess_letters)) + " missed guesses and " + str(len(correct_letters)) + " correct guesses, the word was '" + word + "'")
                 is_game_over = True
-
         if is_game_over:
             ask_to_play_again()
 
 def print_welcome_message():
-    print("hangman_logo")
+    """
+    """
+    f = Figlet(font='slant')
+    print(f.renderText('Hangman - Get ready to guess'))
 
 def display_hangman(lives):
     """
@@ -121,6 +119,8 @@ def display_hangman(lives):
     return hangman_pics[lives]
 
 def start_game():
+    """
+    """
     print_welcome_message()
     take_user_name_input()
     run_game()
