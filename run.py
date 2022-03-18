@@ -20,7 +20,7 @@ def get_random_word():
     return word
   
 
-def display_current_game_status(missed_letters, correct_letters, word):
+def display_current_game_status(incorrect_guess_letters, correct_letters, word):
     """
     Prints the layout of the playerboard and updates it after every turn
     """
@@ -29,7 +29,7 @@ def display_current_game_status(missed_letters, correct_letters, word):
     print(display_hangman(lives))
 
     print()
-    print(f"Letters you have guessed wrong so far: ",Fore.RED + ' '.join(missed_letters))
+    print(f"Letters you have guessed wrong so far: ",Fore.RED + ' '.join(incorrect_guess_letters))
     print()
     placeholder_word = '_' * len(word) #Finds _ * the length of the unknown word
 
@@ -94,6 +94,7 @@ def check_if_all_letters_are_guessed(correct_guesses, word):
 
     print(hangman_win)
     print("Congratulations! You have guessed the word: " + word)
+    guessed_words
     return True
 
 def run_game():
