@@ -1,6 +1,3 @@
-from colorama import Fore
-colorama.init(autoreset=True)
-
 hangman_logo = ['''
 ╭╮╱╭╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━━━━┳╮╱╱╱╱╱╭━━━╮
 ┃┃╱┃┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱┃╭╮╭╮┃┃╱╱╱╱╱┃╭━╮┃
