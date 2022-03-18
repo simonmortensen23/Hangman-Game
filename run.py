@@ -65,10 +65,10 @@ def ask_to_play_again():
     play_again = input("Do you want to play again? (yes or no): ").lower()
     if play_again == "yes":
         print()
-        typewriter_slow(f"Here we go again, {player_name}!")
+        typewriter_slow(f"\nHere we go again, {player_name}!")
         run_game()
     else:
-        typewriter_slow(f"Game is over {player_name}, enjoy your day!")
+        typewriter_slow(f"\nGame is over {player_name}, enjoy your day!\n")
         exit_game()
     
 def take_user_name_input():
@@ -92,6 +92,7 @@ def check_if_all_letters_are_guessed(correct_guesses, word):
         if word[i] not in correct_guesses:
             return False
 
+    print(hangman_win)
     print("Congratulations! You have guessed the word: " + word)
     return True
 
@@ -140,7 +141,6 @@ def exit_game():
     """
     """
     f = Figlet(font='slant')
-    print()
     print(f.renderText("Goodbye"))
     sys.exit()
 
