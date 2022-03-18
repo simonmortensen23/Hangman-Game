@@ -3,9 +3,11 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 from words import words
-from hangman_art import hangman_logo, hangman_pics
+from hangman_art import *
 from typewriter import *
 from pyfiglet import Figlet
+
+import colorama
 from colorama import init, Fore
 init(autoreset=True)
 

@@ -1,5 +1,6 @@
-
+import colorama
 from colorama import init, Fore
+colorama.init(autoreset=True)
 
 hangman_logo = ['''
 ╭╮╱╭╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━━━━┳╮╱╱╱╱╱╭━━━╮
