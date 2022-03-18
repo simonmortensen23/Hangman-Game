@@ -63,10 +63,10 @@ def ask_to_play_again():
     play_again = input("Do you want to play again? (yes or no): ").lower()
     if play_again == "yes":
         print()
-        print(f"Here we go again, {player_name}!")
+        typewriter_slow(f"Here we go again, {player_name}!")
         run_game()
     else:
-        print(f"Game is over {player_name}, enjoy your day!")
+        typewriter_slow(f"Game is over {player_name}, enjoy your day!")
     
 def take_user_name_input():
     """
