@@ -12,14 +12,14 @@ init(autoreset=True)
 
 def get_random_word():
     """
-    This function selects and returns a random word from the words.py file
+    Gets and returns a random word the player have to guess from the words.py file
     """
     word = random.choice(words) #Chooses random word from words array
     return word
 
 def display_current_game_status(missed_letters, correct_letters, word):
     """
-    This function prints the layout of the playerboard and updates it after every turn
+    Prints the layout of the playerboard and updates it after every turn
     """
     global lives
     player_lives = display_hangman(lives)
@@ -27,7 +27,7 @@ def display_current_game_status(missed_letters, correct_letters, word):
     print(display_hangman(lives))
 
     print()
-    print(f"Letters you have guessed wrong so far: ", ' '.join(missed_letters))
+    print(f"Letters you have guessed wrong so far: ",Fore.RED + ' '.join(missed_letters))
     print()
     placeholder_word = '_' * len(word) #Finds _ * the length of the unknown word
 
@@ -58,22 +58,27 @@ def take_guess_input(already_guessed):
      
 def ask_to_play_again():
     """
-    This function asks the player if they want to play again or quit the game
+    Function asks the player if they want to play again or quit the game
     """
     play_again = input("Do you want to play again? (yes or no): ").lower()
     if play_again == "yes":
+        print()
+        print(f"Here we go again, {player_name}!")
         run_game()
     else:
         print(f"Game is over {player_name}, enjoy your day!")
     
 def take_user_name_input():
     """
+    Takes user name input from player and stores in global
     """
+    global player_name
     player_name = input("Enter your name: ")
     print(f"Welcome {player_name}!")
 
 def check_if_all_letters_are_guessed(correct_guesses, word):
     """
+    Checks if all letters in the secret word are guess and ends game if True
     """
     for i in range (len(word)):
         if word[i] not in correct_guesses:
@@ -84,6 +89,7 @@ def check_if_all_letters_are_guessed(correct_guesses, word):
 
 def run_game():
     """
+    Main game function
     """
     global lives
     lives  = 0
@@ -112,7 +118,7 @@ def run_game():
 
 def print_welcome_message():
     """
-    This functions prints out
+    Prints out welcome message when starting game
     """
     f = Figlet(font='slant')
     print(f.renderText("Hangman"))
@@ -129,6 +135,8 @@ def display_hangman(lives):
 
 def start_game():
     """
+    Startup sequence of the game
+    Calls welcome message and take user name input before running main game code
     """
     print_welcome_message()
     take_user_name_input()

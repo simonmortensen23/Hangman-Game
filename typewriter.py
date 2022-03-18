@@ -7,6 +7,6 @@ def typewriter(string):
     The python code for the typewriter was taken from https://stackoverflow.com/questions/20302331/typing-effect-in-python
     """
     for i in string:
-        sleep(0.1)
+        sleep(0.02)
         sys.stdout.write(i)
         sys.stdout.flush()
