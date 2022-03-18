@@ -25,7 +25,6 @@ def display_current_game_status(missed_letters, correct_letters, word):
     """
     global lives
     player_lives = display_hangman(lives)
-    #TODO: instead print the hangman picture here
     print(display_hangman(lives))
 
     print()
