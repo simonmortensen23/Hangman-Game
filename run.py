@@ -6,6 +6,7 @@ from words import words
 from hangman_art import *
 from typewriter import *
 from pyfiglet import Figlet
+import sys
 
 import colorama
 from colorama import init, Fore
@@ -45,7 +46,7 @@ def take_guess_input(already_guessed):
     Handles the player guess input and checks if it a single letter that has not been used yet
     """
     while True:
-        guess = input("Guess a letter: ")
+        guess = input("\nGuess a letter: ")
         print()
         guess = guess.lower()
         if len(guess) != 1:
@@ -76,7 +77,12 @@ def take_user_name_input():
     """
     global player_name
     player_name = input("Enter your name: ")
-    print(f"Welcome {player_name}!")
+    if player_name == '':
+        print("No name has been entered")
+        take_user_name_input()
+    else:
+        print(f"Welcome {player_name}!")
+       
 
 def check_if_all_letters_are_guessed(correct_guesses, word):
     """
@@ -105,6 +111,8 @@ def run_game():
     while True:
         display_current_game_status(incorrect_guess_letters, correct_letters, word)
         guess = take_guess_input(incorrect_guess_letters + correct_letters)
+        
+        
         if guess in word:
             correct_letters = correct_letters + guess
             is_game_over = check_if_all_letters_are_guessed(correct_letters, word)
@@ -116,7 +124,7 @@ def run_game():
                 print("You are out of lives!\nAfter " + str(len(incorrect_guess_letters)) + " missed guesses and " + str(len(correct_letters)) + " correct guesses, the word was '" + word + "'")
                 is_game_over = True
         if is_game_over:
-            ask_to_play_again()
+            ask_to_play_again()        
 
 def print_welcome_message():
     """
@@ -124,13 +132,17 @@ def print_welcome_message():
     """
     f = Figlet(font='slant')
     print(f.renderText("Hangman"))
-    typewriter(f"""
+    typewriter(""" 
 D O  Y O U  D A R E  T O  R I S K  Y O U R  N E C K\t\n
-E N T E R   Y O U R   N A M E  T O  S T A R T  G A M E\t\n\nA N D   H A V E   F U N ! !\n""")
+E N T E R   Y O U R   N A M E  T O  S T A R T  G A M E\t\n""")
 
 def exit_game():
+    """
+    """
     f = Figlet(font='slant')
+    print()
     print(f.renderText("Goodbye"))
+    sys.exit()
 
 def display_hangman(lives):
     """
