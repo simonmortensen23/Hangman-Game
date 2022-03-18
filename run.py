@@ -4,7 +4,11 @@
 import random
 from words import words
 from hangman_art import *
+from typewriter import *
 from pyfiglet import Figlet
+import colorama
+from colorama import init, Fore
+init(autoreset=True)
 
 def get_random_word():
     """
@@ -64,12 +68,13 @@ def ask_to_play_again():
     
 def take_user_name_input():
     """
-    This function 
     """
     player_name = input("Enter your name: ")
     print(f"Welcome {player_name}!")
 
 def check_if_all_letters_are_guessed(correct_guesses, word):
+    """
+    """
     for i in range (len(word)):
         if word[i] not in correct_guesses:
             return False
@@ -107,9 +112,13 @@ def run_game():
 
 def print_welcome_message():
     """
+    This functions prints out
     """
     f = Figlet(font='slant')
-    print(f.renderText('Hangman - Get ready to guess'))
+    print(f.renderText("Hangman"))
+    typewriter(f"""
+D O  Y O U  D A R E  T O  R I S K  Y O U R  N E C K\t\n
+E N T E R   Y O U R   N A M E  T O  S T A R T  G A M E\t\n\nA N D   H A V E   F U N ! !\n""")
 
 def display_hangman(lives):
     """
