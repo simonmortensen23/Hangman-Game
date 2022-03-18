@@ -6,7 +6,6 @@ from words import words
 from hangman_art import *
 from typewriter import *
 from pyfiglet import Figlet
-import colorama
 from colorama import init, Fore
 init(autoreset=True)
 
@@ -68,7 +67,7 @@ def ask_to_play_again():
         run_game()
     else:
         typewriter_slow(f"Game is over {player_name}, enjoy your day!")
-        
+        exit_game()
     
 def take_user_name_input():
     """
@@ -127,6 +126,10 @@ def print_welcome_message():
     typewriter(f"""
 D O  Y O U  D A R E  T O  R I S K  Y O U R  N E C K\t\n
 E N T E R   Y O U R   N A M E  T O  S T A R T  G A M E\t\n\nA N D   H A V E   F U N ! !\n""")
+
+def exit_game():
+    f = Figlet(font='slant')
+    print(f.renderText("Goodbye"))
 
 def display_hangman(lives):
     """
