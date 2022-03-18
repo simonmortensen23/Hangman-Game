@@ -16,6 +16,7 @@ def get_random_word():
     """
     word = random.choice(words) #Chooses random word from words array
     return word
+  
 
 def display_current_game_status(missed_letters, correct_letters, word):
     """
@@ -67,6 +68,7 @@ def ask_to_play_again():
         run_game()
     else:
         typewriter_slow(f"Game is over {player_name}, enjoy your day!")
+        
     
 def take_user_name_input():
     """
