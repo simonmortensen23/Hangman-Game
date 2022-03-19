@@ -16,11 +16,16 @@ The player has seven tries to guess the word and win the game.
 ### Existing Features
 - Welcome message
   - Player asked to enter name
+  - 
 ![Welcome](https://user-images.githubusercontent.com/43667190/159117058-a93a00d5-81fb-4bb2-a515-8e8c8188da68.PNG)
+
 - Random word is chosen and hidden under the underscores
+- 
 ![1st](https://user-images.githubusercontent.com/43667190/159117157-d6b1fa97-6345-4d27-8c05-c2cb2e775ab9.PNG)
+
 - Player input accepted
 - Stores wrong guessed letters for the player to see
+
 ![2nd](https://user-images.githubusercontent.com/43667190/159117188-e6ee3b32-769f-40e3-882b-e9ece59428b5.PNG)
 
 
