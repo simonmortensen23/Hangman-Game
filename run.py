@@ -107,7 +107,6 @@ def check_if_all_letters_are_guessed(correct_guesses, word):
 
     print(hangman_win)
     print("Congratulations! You have guessed the word: " + word)
-    guessed_words
     return True
 
 
