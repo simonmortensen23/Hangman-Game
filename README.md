@@ -120,6 +120,11 @@ I have manually tested this project by following:
 ### Validator Testing
 - PEP8
   - No errors were returned from PEP8online.com
+
+- Lighthouse
+  - Lighthouse was used tot test Performance, Best Practices, Accessibility and SEO Desktop
+
+![image](https://user-images.githubusercontent.com/43667190/159119660-178e70d0-3c76-438d-b44f-b21f9097ee0f.png)
   
 ## Deployment
 This Project was deployed using Code Institute's mock terminal for Heroku.
