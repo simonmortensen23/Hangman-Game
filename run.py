@@ -23,7 +23,7 @@ def get_random_word():
 
 
 def display_current_game_status(incorrect_guess_letters,
- correct_letters, word):
+                                correct_letters, word):
     """
     Prints the layout of the playerboard and updates it after every turn
     """
@@ -132,7 +132,7 @@ def run_game():
         if guess in word:
             correct_letters = correct_letters + guess
             is_game_over = check_if_all_letters_are_guessed(correct_letters,
-             word)
+                                                            word)
         else:
             lives = lives + 1
             incorrect_guess_letters = incorrect_guess_letters + guess
