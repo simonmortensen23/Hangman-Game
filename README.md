@@ -5,11 +5,16 @@ The games origins is not totally clear, although author and word game expert Ton
 
 ## How To Play
 Hangman - Rite of words and Life is based on the classic paper / blackboard game.
-The player has to enter their name and the game will start. 
 
+The player has to enter their name and the game will start.
+
+The computer will choose a random word from the list of words, that the player has to guess.
+
+The player has seven tries to guess the word and win the game.
 
 ## Features
 ### Existing Features
+
 
 ### Future Features
 
