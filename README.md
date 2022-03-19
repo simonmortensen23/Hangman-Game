@@ -16,7 +16,7 @@ The player has seven tries to guess the word and win the game.
 ### Existing Features
 - Welcome message
   - Player asked to enter name
-  - 
+  
 ![Welcome](https://user-images.githubusercontent.com/43667190/159117058-a93a00d5-81fb-4bb2-a515-8e8c8188da68.PNG)
 
 - Random word is chosen and hidden under the underscores
@@ -28,7 +28,10 @@ The player has seven tries to guess the word and win the game.
 
 ![2nd](https://user-images.githubusercontent.com/43667190/159117188-e6ee3b32-769f-40e3-882b-e9ece59428b5.PNG)
 
-
+- Input validation and error-checking
+  - You can only enter one letter at the time
+  - You must enter letters from the english alphabet
+  - You cannot enter the same guess twice
 ### Future Features
 - Allow the player to choose difficulty
 - Scoreboard and points system
@@ -61,4 +64,5 @@ This Project was deployed using Code Institute's mock terminal for Heroku.
   - Link Heroku app to the repository
   - Click on Deploy
 ## Credits
-- Chris Horton for the [hangman art](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c) 
+- Code institute for the deployment terminal
+- Chris Horton for the [Hangman art & wordslist](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c) 
