@@ -14,7 +14,7 @@ The player has seven tries to guess the word and win the game.
 
 ## Features
 ### Existing Features
-
+- Welcome message 
 
 ### Future Features
 
