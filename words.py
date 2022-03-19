@@ -1,41 +1,7 @@
-words = '''
-affix
-avenue
-awkward
-beekeeper
-boggle
-cobweb
-cycle
-disavow
-duplex
-equip
-exodus
-funny
-galaxy
-gossip
-icebox
-injury
-ivory
-jackpot
-jelly
-jockey
-joking
-joyful
-jumbo
-kayak
-khaki
-kiosk
-lengths
-lucky
-luxury
-lymph
-nightclub
-onyx
-ovary
-pajama
-pneumonia
-pshaw
-puppy
-scratch
-staff
-stretch'''.split()
+words = ('ant baboon badger bat bear beaver camel cat clam cobra cougar '
+         'coyote crow deer dog donkey duck eagle ferret fox frog goat '
+         'goose hawk lion lizard llama mole monkey moose mouse mule newt '
+         'otter owl panda parrot pigeon python rabbit ram rat raven '
+         'rhino salmon seal shark sheep skunk sloth snake spider '
+         'stork swan tiger toad trout turkey turtle weasel whale wolf '
+         'wombat zebra ').split()
