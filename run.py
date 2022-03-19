@@ -37,13 +37,13 @@ def display_current_game_status(incorrect_guess_letters,
         Fore.RED + ' '.join(incorrect_guess_letters)
         )
     print()
-    placeholder_word = '_' * len(word)
+    w_holder = '_' * len(word)
 
     for index in range(len(word)):
         if word[index] in correct_letters:
-            placeholder_word = placeholder_word[:index] + word[index] + placeholder_word[index+1:]
+            w_holder = w_holder[:index] + word[index] + w_holder[index+1:]
 
-    for letter in placeholder_word:
+    for letter in w_holder:
         print(letter, end=' ')
     print()
 
