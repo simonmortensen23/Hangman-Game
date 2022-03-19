@@ -22,8 +22,8 @@ def get_random_word():
     return word
 
 
-def display_current_game_status
-(incorrect_guess_letters, correct_letters, word):
+def display_current_game_status(incorrect_guess_letters,
+ correct_letters, word):
     """
     Prints the layout of the playerboard and updates it after every turn
     """
