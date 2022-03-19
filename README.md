@@ -40,7 +40,67 @@ The player has seven tries to guess the word and win the game.
 - Scoreboard and points system
 - Add your own words to the list 
 
-## Data Model
+### Games stages
+- First stage after player enters username
+  - Hangman stages
+  - Underscores shows the length of the word
+  - Letters guessed wrong
+  - Letters guessed right
+  - Input to guess a letter
+
+![1st](https://user-images.githubusercontent.com/43667190/159118730-3bbf8afd-8f11-4fb9-8ca9-c64ffb79b124.PNG)
+
+- Second stage
+  - Whenever the player guesses a wrong letter, a new part of the hangman appears
+  - Wrong letter is added to the list of wrong letters
+  - After one wrong guess the head appers
+  
+![2nd](https://user-images.githubusercontent.com/43667190/159118928-c90d1236-50be-4ae2-b5a1-31f3bd7c784f.PNG)
+
+- Stage 3
+  - After two wrong guesses the neck appears
+
+![3rd](https://user-images.githubusercontent.com/43667190/159118992-be6c51d6-8930-4814-9826-9cd5d16d0161.PNG)
+
+- Stage 4
+  - After three wrong guesses the right arm appears
+
+![4th](https://user-images.githubusercontent.com/43667190/159119169-797da5f0-03ad-4f0c-ada9-734b82fb8bf0.PNG)
+
+- Stage 5
+  - After four wrong guesses the left arm appears
+
+![5th](https://user-images.githubusercontent.com/43667190/159119181-6de34372-7b34-478b-a24a-678016474e06.PNG)
+
+- Stage 6
+  - After five wrong guesses the right leg appears
+
+![6th](https://user-images.githubusercontent.com/43667190/159119184-3ec9aa3e-792e-4625-a687-78aa11b869bb.PNG)
+
+- Stage 7
+  - After six wrong guesses the left leg appears
+
+![7yh](https://user-images.githubusercontent.com/43667190/159119189-8a8d50c8-265a-4074-9fae-4413be3ea43c.PNG)
+
+- Stage 8
+  - After seven wrong guesses the head will turn from "o" to "x" to show that the game is over
+
+![final](https://user-images.githubusercontent.com/43667190/159119210-76cf2e22-be84-4d95-9c58-fe9cee3c3bd0.PNG)
+
+- Win
+  - If the player guesses all the correct letters in the random word the stickman will return safely to the ground
+
+![win](https://user-images.githubusercontent.com/43667190/159119215-0bb187e4-d267-41a7-b087-760dda03f800.PNG)
+
+- Play Again
+  - Ask if player wants to play again using "yes" or "no" input
+
+![newGameYes](https://user-images.githubusercontent.com/43667190/159119231-046dda07-7142-4586-9e71-e9422ac1c9ad.PNG)
+
+- Goodbye
+  - If player types "no" in play again the game will print a message and shut down
+
+![goodbye](https://user-images.githubusercontent.com/43667190/159119238-d1bb23ba-1f26-47bb-ba84-304ff808c98f.PNG)
 
 ## Testing
 I have manually tested this project by following:
