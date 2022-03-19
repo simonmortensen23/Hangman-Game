@@ -41,8 +41,7 @@ def display_current_game_status(incorrect_guess_letters,
 
     for index in range(len(word)):
         if word[index] in correct_letters:
-            placeholder_word = placeholder_word[:index] + word[index] 
-            + placeholder_word[index+1:]
+            placeholder_word = placeholder_word[:index] + word[index] + placeholder_word[index+1:]
 
     for letter in placeholder_word:
         print(letter, end=' ')
@@ -77,9 +76,12 @@ def ask_to_play_again():
         print()
         typewriter_slow(f"\nHere we go again, {player_name}!")
         run_game()
-    else:
+    elif play_again == "no":
         typewriter_slow(f"\nGame is over {player_name}, enjoy your day!\n")
         exit_game()
+    else:
+        print("Write yes or no to continue")
+        ask_to_play_again()
 
 
 def take_user_name_input():
