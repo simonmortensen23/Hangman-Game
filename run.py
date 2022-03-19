@@ -41,8 +41,8 @@ def display_current_game_status(incorrect_guess_letters,
 
     for index in range(len(word)):
         if word[index] in correct_letters:
-            placeholder_word = placeholder_word[:index] + word[index] +
-            placeholder_word[index+1:]
+            placeholder_word = placeholder_word[:index] + word[index] 
+            + placeholder_word[index+1:]
 
     for letter in placeholder_word:
         print(letter, end=' ')
@@ -130,8 +130,8 @@ def run_game():
 
         if guess in word:
             correct_letters = correct_letters + guess
-            is_game_over =
-            check_if_all_letters_are_guessed(correct_letters, word)
+            is_game_over = check_if_all_letters_are_guessed(correct_letters,
+             word)
         else:
             lives = lives + 1
             incorrect_guess_letters = incorrect_guess_letters + guess
