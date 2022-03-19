@@ -45,7 +45,15 @@ I have manually tested this project by following:
 
 ### Validator Testing
 - PEP8
-  - No errors were returned from [PEP8online.com](http://pep8online.com/checkresult)
+  - No errors were returned from PEP8online.com
+  
 ## Deployment
-
+This Project was deployed using Code Institute's mock terminal for Heroku.
+- Step for deployment:
+  - Fork or clone this repository
+  - Create a new Heroku app
+  - Set the buildsbacks to Python and NodeJS in that specific order
+  - Link Heroku app to the repository
+  - Click on Deploy
 ## Credits
+- Chris Horton for the [hangman art](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c) 
