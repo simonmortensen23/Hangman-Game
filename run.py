@@ -162,6 +162,8 @@ E N T E R   Y O U R   N A M E  T O  S T A R T  G A M E\t\n""")
 
 def exit_game():
     """
+    Exit game function
+    Prints goodbye and exit system
     """
     f = Figlet(font='slant')
     print(f.renderText("Goodbye"))
